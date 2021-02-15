@@ -1,0 +1,6 @@
+- get "1" when i pass in 1
+- get "2" when i pass in 2
+- get "Fizz" when i pass in 3 ( or multiple of 3)
+- get "Buzz" when i pass in 5 ( or multiple of 5)
+- get "FizzBuzz" when i pass in (multiple of 3 & 5)
+
