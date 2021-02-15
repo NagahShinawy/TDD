@@ -1,4 +1,4 @@
-from utils import fizzbuzz
+from utils import fizzbuzz, check_fizzbuzz
 
 
 def test_assert_true():
@@ -15,10 +15,30 @@ def test_string_len():
 
 
 def test_returns_1_with_1_passed():
-    number = fizzbuzz(1)
-    assert number == "1"
+    check_fizzbuzz(1, "1")
 
 
 def test_returns_2_with_2_passed():
-    number = fizzbuzz(2)
-    assert number == "2"
+    check_fizzbuzz(2, "2")
+
+
+def test_returns_fizz_with_3_passed():
+    check_fizzbuzz(3, "Fizz")
+    check_fizzbuzz(6, "Fizz")
+    check_fizzbuzz(9, "Fizz")
+    check_fizzbuzz(12, "Fizz")
+    check_fizzbuzz(18, "Fizz")
+
+
+def test_returns_buzz_with_5_passed():
+    check_fizzbuzz(5, "Buzz")
+    check_fizzbuzz(25, "Buzz")
+    check_fizzbuzz(20, "Buzz")
+    check_fizzbuzz(35, "Buzz")
+
+
+def test_returns_fizzbuzz_with_multiple3_or_5_passed():
+    check_fizzbuzz(30, "FizzBuzz")
+    check_fizzbuzz(15, "FizzBuzz")
+    check_fizzbuzz(45, "FizzBuzz")
+    check_fizzbuzz(90, "FizzBuzz")
