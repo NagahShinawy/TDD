@@ -40,3 +40,7 @@ Source: https://docs.pytest.org/en/latest/usage.html#specifying-tests-selecting-
 1- red pahse: function is not defined
 2- green phase: function is defined & you can call it (write "test_can_call_fizzbuzz " with None return
 3- refactor phase : implenet unittest and remove function that has None return (refactor)
+
+====================================
+settup pytest on pycharm
+1- seetings > python integrated tools > under "Testing tab" choose default test runner > pytest

@@ -42,3 +42,7 @@ def test_returns_fizzbuzz_with_multiple3_or_5_passed():
     check_fizzbuzz(15, "FizzBuzz")
     check_fizzbuzz(45, "FizzBuzz")
     check_fizzbuzz(90, "FizzBuzz")
+
+
+def test_assert():
+    assert True
