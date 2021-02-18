@@ -7,12 +7,13 @@ def teardown_module(module):
 
 
 class TestBloodType:
-
     @classmethod
     def setup_class(cls):
         print("\nMy class is ", cls)
 
-    def setup(self):  # RUNS BEFORE EVERY METHOD BUT based on priority, setup_method then setup
+    def setup(
+        self,
+    ):  # RUNS BEFORE EVERY METHOD BUT based on priority, setup_method then setup
         print("\nSETUP IN GENERAL FOR ", self.blood_types)
 
     def test_name(self):
@@ -28,7 +29,9 @@ class TestBloodType:
         self.check_blood_type("O+")
         self.check_blood_type("O-")
 
-    def setup_method(self, method):  # naming conventions is setup( MUST ), run before every unittest
+    def setup_method(
+        self, method
+    ):  # naming conventions is setup( MUST ), run before every unittest
         if method == self.test_blood_type:
             print("\nSET UP FOR CHECKING BLOOD TYPE")
         elif method == self.test_name:
@@ -39,7 +42,7 @@ class TestBloodType:
         print("\nDestroying method ", method)
 
     def teardown(
-            self,
+        self,
     ):  # naming conventions is teardown ( MUST ), run after every unittest
         print("\nDestroying in general for every method", self.blood_types)
 
