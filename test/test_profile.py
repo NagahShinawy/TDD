@@ -12,7 +12,7 @@ def users():
 
 @pytest.fixture
 def user(users):
-    return choice(users + ["ahmed", "ali"])
+    return choice(users)
 
 
 @pytest.fixture
@@ -20,7 +20,7 @@ def allowed_files_types():
     return ["png", "jpg", "jpeg"]
 
 
-@pytest.fixture()
+@pytest.fixture(scope='class')
 def allowed_methods():
     return ["GET", "POST", "PUT", "PATCH"]
 
@@ -32,6 +32,7 @@ def test_valid_username(user, users):
 
 
 def test_valid_file_extension(allowed_files_types):
+    # run "allowed_files_types" before "test_valid_file_extension" because "allowed_files_types" is fixture
     assert "png" in allowed_files_types
     assert "jpg" in allowed_files_types
     assert "jpeg" in allowed_files_types
