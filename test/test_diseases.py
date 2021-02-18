@@ -32,3 +32,8 @@ def setup(request):
 def test1(setup):
     print("Set up", setup)
     assert True
+
+
+def test2():
+    print("\ntest2")
+    assert True

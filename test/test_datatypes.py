@@ -23,11 +23,20 @@ def test_dict():
     assert {"1": 1} == {"1": 1}
 
 
+def raises_key_exception():
+    # return dict()['test']
+    raise KeyError
+
+
 def raises_value_exception():
-    return dict()['test']
+    # return dict()['test']
+    raise ValueError
 
 
 def test_exception():
     # do test on KeyError. is key noy found , the test will be passed, because you add "KeyError"
     with raises(KeyError):
+        raises_key_exception()
+
+    with raises(ValueError):
         raises_value_exception()
