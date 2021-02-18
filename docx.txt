@@ -44,3 +44,47 @@ Source: https://docs.pytest.org/en/latest/usage.html#specifying-tests-selecting-
 ====================================
 settup pytest on pycharm
 1- seetings > python integrated tools > under "Testing tab" choose default test runner > pytest
+
+================================
+pytest -v   --verbose  increase verbosity. show testcase status (PASSED, FAILED)
+
+run tests/test_SOMETHIND.py
+
+=======================
+run on specific test
+pytest test/test_seha.py::TestBloodType::test_blood_type
+=======================
+pytest -v -s --> -s show printed in console (without it , you can not see values printed in console
+
+==================
+setup xunit priority
+
+1- for setup:
+
+    setup_module > setup_cls > setup_method > setup > run test_SOMETHING based on order of method in file.py
+
+    (setup_method and  setup )   : runs before every unittest
+
+
+2- for destroy
+    teardown > teardown_method > finish all testcase(including setup, excute, destroy) > destroy class > detroy module
+
+===================================
+
+
+@pytest.fixture
+def allowed_files_types():
+    return ["png", "jpg", "jpeg"]
+
+
+means that "allowed_files_types" is an input for test function that it uses pytest.fixture "allowed_files_types"
+
+LOOK:
+def test_valid_file_extension(allowed_files_types):
+    assert 'png' in allowed_files_types
+    assert 'jpg' in allowed_files_types
+    assert 'jpeg' in allowed_files_types
+
+"test_valid_file_extension" is using "allowed_files_types" as an input and "allowed_files_types" will run before
+exexcute "test_valid_file_extension".
+= means run :allowed_files_types" before run "test_valid_file_extension"

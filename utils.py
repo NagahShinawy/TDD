@@ -14,10 +14,3 @@ def fizzbuzz(value):
 
 def check_fizzbuzz(value, expected):
     assert fizzbuzz(value) == expected, f"{value} != {expected}"
-
-
-def check_blood_type(blood_type):
-    blood_types = ("A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-")
-    assert blood_type in blood_types, "Blood types should one of {}".format(
-        ",".join(blood_types)
-    )
