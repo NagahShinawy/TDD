@@ -1,4 +1,4 @@
-from pytest import approx
+from pytest import approx, raises
 
 
 def test_int():
@@ -21,3 +21,13 @@ def test_list():
 
 def test_dict():
     assert {"1": 1} == {"1": 1}
+
+
+def raises_value_exception():
+    return dict()['test']
+
+
+def test_exception():
+    # do test on KeyError. is key noy found , the test will be passed, because you add "KeyError"
+    with raises(KeyError):
+        raises_value_exception()
