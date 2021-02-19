@@ -20,7 +20,7 @@ def allowed_files_types():
     return ["png", "jpg", "jpeg"]
 
 
-@pytest.fixture(scope='class')
+@pytest.fixture(scope="class")
 def allowed_methods():
     return ["GET", "POST", "PUT", "PATCH"]
 

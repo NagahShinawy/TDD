@@ -23,7 +23,6 @@ def is_valid_allergy_en_name(allergy_en_name):
 
 
 class TestAllergy:
-
     @pytest.mark.parametrize("allergy_en_name", ["eggs"])
     # allergy_en_name is the params of is_valid_allergy_en_name
     # ["eggs"] is list of values that passed as "eggs" to "is_valid_allergy_en_name"
