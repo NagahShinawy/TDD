@@ -93,3 +93,33 @@ exexcute "test_valid_file_extension".
 test on just specific one testcase (test_int)
 pytest test/test_datatypes.py -v -s -k "test_int"
 pytest test/test_datatypes.py -v -s -k "test_int or test_str"
+
+=====================================
+
+search for
+1 - python covages tools (coverage)
+2 - static code alanysis tools (pylint)
+
+===========================
+
+COVERAGE
+
+>> coverage run app/app.py  (.coverage file will be created)
+
+>>  coverage report
+
+OUTPUT
+
+Name         Stmts   Miss  Cover
+--------------------------------
+app\app.py       8      6    25%
+
+
+===============================
+>> coverage report -m
+-m : means --show-missing
+
+========================
+YOU MUST RUN FILE app.py FISRT to take chanages to be covered , then run coverage html
+>> coverage html
+output : htmlcov > choose index.html
