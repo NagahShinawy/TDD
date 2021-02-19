@@ -120,6 +120,28 @@ app\app.py       8      6    25%
 -m : means --show-missing
 
 ========================
+
+coverage : COVERAGE OF RUNNING CODE
 YOU MUST RUN FILE app.py FISRT to take chanages to be covered , then run coverage html
+
+the python files you run, the files will be shown at report
 >> coverage html
 output : htmlcov > choose index.html
+
+=======================
+pytest-cov : COVERAGE OF TESTING CODE
+
+use moudle name not filename (app not app.py)
+
+pytest app/  -v  --cov=app
+
+app: means app dir
+
+
+GENERATE html report:
+    pytest app/  -v  --cov=app --cov-report=html
+=======================
+
+
+coverage: 100% code coverage
+pytest-cov: 100% test coverage
